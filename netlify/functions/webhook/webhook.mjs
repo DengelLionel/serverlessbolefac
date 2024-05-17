@@ -7,7 +7,10 @@ exports.handler = async function(event, context) {
       body: 'Method Not Allowed',
     };
   }
-
+  const headers={
+    'X-Shopify-Access-Token': process.env.TOKEN,
+    "Content-Type": "application/json"
+}
   const order = JSON.parse(event.body);
 
   // Lee las propiedades del carrito
